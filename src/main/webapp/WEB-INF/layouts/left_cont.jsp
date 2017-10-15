@@ -4,34 +4,41 @@
 <c:set var="ctx" value="${pageContext.request.contextPath}" />
  
 <span class=""> 
-				
+	
 					<h2 onclick="javascript:ShowMenu(this,0)" id="menu_AprM_h2_1" class="">
-						<a><b class=""></b>考勤管理</a>
+						<a><b class=""></b>会员信息</a>
 					</h2>
 					<ul class="no">
 						
 							<li class="li1">
-								<a id="aNode_1_0_0" onclick="showMenuPage('/ess/askForLeaveList.do',
-													' 行政管理 > 考勤管理> 请假 ',
+								<a id="aNode_1_0_0" onclick="showMenuPage('profile',
+													'  会员管理> 资料维护 ',
 							    					'menu_AM_h1','1',
 							    					'menu_AprM_h2_1','0',
-							    					'aNode_1_0_0')">请假</a>
+							    					'aNode_1_0_0')">资料维护</a>
 							</li>
 						
 							<li class="li1">
-								<a id="aNode_1_0_1" onclick="showMenuPage('/ess/workOvertimeList.do',
-													' 行政管理 > 考勤管理> 加班 ',
+								<a id="aNode_1_0_1" onclick="showMenuPage('profile',
+													'  会员管理> 修改密码 ',
 							    					'menu_AM_h1','1',
 							    					'menu_AprM_h2_1','0',
-							    					'aNode_1_0_1')">加班</a>
+							    					'aNode_1_0_1')">修改密码</a>
 							</li>
 						
 							<li class="li1">
-								<a id="aNode_1_0_2" onclick="showMenuPage('/ess/leaveQueryResultsList.do',
-													' 行政管理 > 考勤管理> 员工年假查询 ',
+								<a id="aNode_1_0_2" onclick="showMenuPage('leaveQueryResultsList.do',
+													'  会员管理> 推广链接/二维码 ',
 							    					'menu_AM_h1','1',
 							    					'menu_AprM_h2_1','0',
-							    					'aNode_1_0_2')">员工年假查询</a>
+							    					'aNode_1_0_2')">推广链接/二维码</a>
+							</li>
+							 <li class="li1">
+								<a id="aNode_1_0_3" onclick="showMenuPage('leaveQueryResultsList.do',
+													'  会员管理> 我推荐的人 ',
+							    					'menu_AM_h1','1',
+							    					'menu_AprM_h2_1','0',
+							    					'aNode_1_0_3')">我推荐的人</a>
 							</li>
 						
 					</ul>
@@ -40,16 +47,31 @@
 			
 				
 					<h2 onclick="javascript:ShowMenu(this,1)" id="menu_BusinessM_h2_2" class="">
-						<a><b class=""></b>出差管理</a>
+						<a><b class=""></b>积分管理</a>
 					</h2>
 					<ul class="no">
 						
 							<li class="li1">
-								<a id="aNode_1_1_0" onclick="showMenuPage('/ess/businessTripListView.do',
-													' 行政管理 > 出差管理> 个人出差申请 ',
+								<a id="aNode_1_1_0" onclick="showMenuPage('businessTripListView.do',
+													'  积分管理> 我的积分明细 ',
 							    					'menu_AM_h1','1',
 							    					'menu_BusinessM_h2_2','1',
-							    					'aNode_1_1_0')">个人出差申请</a>
+							    					'aNode_1_1_0')">我的积分明细</a>
+							</li>
+									<li class="li1">
+								<a id="aNode_1_1_1" onclick="showMenuPage('businessTripListView.do',
+													'  积分管理> 奖金积分转换 ',
+							    					'menu_AM_h1','1',
+							    					'menu_BusinessM_h2_2','1',
+							    					'aNode_1_1_1')">奖金积分转换</a>
+							</li>
+							
+									<li class="li1">
+								<a id="aNode_1_1_2" onclick="showMenuPage('businessTripListView.do',
+													'  积分管理> 奖金积分提现 ',
+							    					'menu_AM_h1','1',
+							    					'menu_BusinessM_h2_2','1',
+							    					'aNode_1_1_2')">奖金积分提现</a>
 							</li>
 						
 					</ul>
@@ -58,56 +80,71 @@
 			
 				
 					<h2 onclick="javascript:ShowMenu(this,2)" id="menu_MeetingsM_h2_3" class="">
-						<a><b></b>会议管理</a>
+						<a><b></b>积分商城</a>
 					</h2>
 					<ul class="no">
 						
 							<li class="li1">
-								<a id="aNode_1_2_0" onclick="showMenuPage('/ess/meetingList.do',
-													' 行政管理 > 会议管理> 会议管理 ',
+								<a id="aNode_1_2_0" onclick="showMenuPage('meetingList.do',
+													'  积分商城> 自营商城 ',
 							    					'menu_AM_h1','1',
 							    					'menu_MeetingsM_h2_3','2',
-							    					'aNode_1_2_0')">会议管理</a>
+							    					'aNode_1_2_0')">自营商城</a>
 							</li>
 						
 							<li class="li1">
-								<a id="aNode_1_2_1" onclick="showMenuPage('/ess/meetingFacilityList.do',
-													' 行政管理 > 会议管理> 会议设施管理 ',
+								<a id="aNode_1_2_1" onclick="showMenuPage('meetingFacilityList.do',
+													'  积分商城> 联盟商城 ',
 							    					'menu_AM_h1','1',
 							    					'menu_MeetingsM_h2_3','2',
-							    					'aNode_1_2_1')">会议设施管理</a>
+							    					'aNode_1_2_1')">联盟商城</a>
+							</li>
+							
+							<li class="li1">
+								<a id="aNode_1_2_2" onclick="showMenuPage('meetingFacilityList.do',
+													'  积分商城> 我的订单 ',
+							    					'menu_AM_h1','1',
+							    					'menu_MeetingsM_h2_3','2',
+							    					'aNode_1_2_2')">我的订单</a>
+							</li>
+							
+							<li class="li1">
+								<a id="aNode_1_2_3" onclick="showMenuPage('meetingFacilityList.do',
+													'  积分商城> 订单审核 ',
+							    					'menu_AM_h1','1',
+							    					'menu_MeetingsM_h2_3','2',
+							    					'aNode_1_2_3')">订单审核</a>
 							</li>
 						
 					</ul>
+					
+					 
 				
-				
-			
-				
-					<h2 onclick="javascript:ShowMenu(this,3)" id="menu_DIARYM_h2_4" class="">
-						<a><b></b>日志管理</a>
+					<h2 onclick="javascript:ShowMenu(this,3)" id="menu_DIARYM_h2_4">
+						<a><b></b>系统管理</a>
 					</h2>
 					<ul class="no">
 						
 							<li class="li1">
-								<a id="aNode_1_3_0" onclick="showMenuPage('/ess/diaryList.do',
-													' 行政管理 > 日志管理> 日志 ',
+								<a id="aNode_1_3_0" onclick="showMenuPage('admin/user',
+													' 系统管理> 用户管理 ',
 							    					'menu_AM_h1','1',
 							    					'menu_DIARYM_h2_4','3',
-							    					'aNode_1_3_0')">日志</a>
+							    					'aNode_1_3_0')">用户管理</a>
 							</li>
 						
 					</ul>
 				
 				
-			
+			<!-- 
 				
-					<h2 onclick="javascript:ShowMenu(this,4)" id="menu_DocM_h2_5" class="">
+					<h2 onclick="javascript:ShowMenu(this,4)" id="menu_DocM_h2_5">
 						<a><b></b>文档管理</a>
 					</h2>
 					<ul class="no">
 						
 							<li class="li1">
-								<a id="aNode_1_4_0" onclick="showMenuPage('/ess/docApplyList.do?docType=1',
+								<a id="aNode_1_4_0" onclick="showMenuPage('docApplyList.do?docType=1',
 													' 行政管理 > 文档管理> 通知公告 ',
 							    					'menu_AM_h1','1',
 							    					'menu_DocM_h2_5','4',
@@ -115,7 +152,7 @@
 							</li>
 						
 							<li class="li1">
-								<a id="aNode_1_4_1" onclick="showMenuPage('/ess/approvalList.do',
+								<a id="aNode_1_4_1" onclick="showMenuPage('approvalList.do',
 													' 行政管理 > 文档管理> 规章制度 ',
 							    					'menu_AM_h1','1',
 							    					'menu_DocM_h2_5','4',
@@ -123,7 +160,7 @@
 							</li>
 						
 							<li class="li1">
-								<a id="aNode_1_4_2" onclick="showMenuPage('/ess/certificateList.do',
+								<a id="aNode_1_4_2" onclick="showMenuPage('certificateList.do',
 													' 行政管理 > 文档管理> 公司证件 ',
 							    					'menu_AM_h1','1',
 							    					'menu_DocM_h2_5','4',
@@ -131,7 +168,7 @@
 							</li>
 						
 							<li class="li1">
-								<a id="aNode_1_4_3" onclick="showMenuPage('/ess/myDocumentList.do',
+								<a id="aNode_1_4_3" onclick="showMenuPage('myDocumentList.do',
 													' 行政管理 > 文档管理> 我的文档 ',
 							    					'menu_AM_h1','1',
 							    					'menu_DocM_h2_5','4',
@@ -140,6 +177,8 @@
 						
 					</ul>
 				
+		  -->
+ 
 				
 			 </span>
 

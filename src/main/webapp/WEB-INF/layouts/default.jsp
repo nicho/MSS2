@@ -168,41 +168,7 @@ $(function() {
 		}
 	});
 	
-	$("#approveForm").validate( {
-		submitHandler : function(form) {
-			 showdiv();
-	   			if(typeof($("#save_btn")) != "undefined"){
-	   				$("#save_btn").attr('disabled', 'true');	
-	   			}
-	   			if(typeof($("#retrial_btn")) != "undefined"){
-	   				$("#retrial_btn").attr('disabled', 'true');	
-	   			}
-	   			if(typeof($("#submit_btn")) != "undefined"){
-	   				$("#submit_btn").attr('disabled', 'true');	
-	   			}
-			$("input[type=submit]").attr('disabled', 'true');
-			var pageNumTag=$("#pageNumTag").val();
-			 if(typeof(pageNumTag) == "undefined")
-			{
-				 $("#pageNumTag").val("1");
-			} 
-			 
-				$("form input").each(function(i,obj){		 
-					if($(obj).attr("onkeyup")){  
-					    var re=new RegExp("limitLength*");    
-			            if(re.test($(obj).attr("onkeyup")))
-		            	{ 
-			            //	$(obj).blur(function(){
-								$(obj).trigger("onkeyup");
-						//	});
-		            	} 		
-					}
-				});
-			 
-			form.submit();
-		}
-	});
-
+ 
 	$("#inputForm2").submit( function(){
 		$("form input").each(function(i,obj){		 
 			if($(obj).attr("onkeyup")){  
@@ -249,11 +215,6 @@ $(function() {
 				.html(
 						decodeURI(decodeURI('<%=request.getSession().getAttribute("menuName")%>')));
 
-		ShowMenu(
-				document
-						.getElementById('<%=request.getSession().getAttribute("h1_id")%>'),
-				'<%=request.getSession().getAttribute("h1_index")%>','<%=request.getSession().getAttribute("aNode")%>');
-		
 		ShowMenu(
 				document
 						.getElementById('<%=request.getSession().getAttribute("h2_id")%>'),
@@ -498,8 +459,8 @@ function initNocbox(){
 </script>
 <script language="JavaScript">
 function showMenuPage(url, pagetop, h1_id, h1_index, h2_id, h2_index,aNode) {
-	url = (url.substr(url.lastIndexOf('/') + 1));
-	location.href = "showNavigation.do?url=" + url + "&menuName="
+	 
+	location.href = "${ctx}/showNavigation?url=" + url + "&menuName="
 			+ encodeURI(encodeURI(pagetop)) + "&h1_id=" + h1_id + "&h1_index="
 			+ h1_index + "&h2_id=" + h2_id + "&h2_index=" + h2_index+ "&aNode=" + aNode;
 }
@@ -702,21 +663,7 @@ function changeMyFold() {
 	}
 </script>
 <script type="text/javascript">
-	function RefreshResponsility(url, responsibilityId) {
-		showdiv();
-		var parameter = {
-			url : url,
-			responsibilityId : responsibilityId
-		};
-		$.post('${ctx}/refreshResponsibility.do', parameter, function(data) {
-			if (data && data == "true") {
-				window.location.href = '${ctx}/' + url;
-			} else {
-				alert("切换职责失败,原因:网络异常,请检查网络后重试!");
-				window.location.href = window.location.href;
-			}
-		});
-	}
+	
 
 	//获取字符串长度
 	function strlen(str) {
@@ -756,42 +703,7 @@ function changeMyFold() {
 		return str.substring(0, i);
 	}
 
-	function WKsendMsg() {
-		var WFcontent = $('#WFcomment').val();
-		WFcontent = WFcontent.replace(/(^\s+)|(\s+$)/g, "");
-		$("#WFstep").val($("#backStep").val());
-		var len = WFcontent.length;
-		if (len == 0) {
-			$("#infoMessageText1").html('发送消息不能为空');
-			$('#InfoMessage1').window('open');
-		} else {
-			//$("#WKForm").submit();
-			//$('#WKDialog').window('close');
-			var parameter = {
-				WFcomment : $("#WFcomment").val(),
-				WFstep : $("#WFstep").val(),
-				WFnotificationId : $("#WFnotificationId").val(),
-				WFprocessCode : $("#WFprocessCode").val(),
-				WFbillId : $("#WFbillId").val()
-			};
-			$.post('${ctx}/sendWFMsg.do', parameter, function(data) {
-				if (data && data == "true") {
-					alert("发送消息成功");
-					window.location.href = window.location.href;
-				} else {
-					alert("发送消息失败");
-				}
-			});
-		}
-	}
-
-	function putRemarkValue(approvalComment) {
-		if (typeof ($("#remark")) != "undefined") {
-			$("[name='remark']").val(approvalComment);
-			$("[name='remark']").text(approvalComment);
-
-		}
-	}
+	
 </script>
 
 <sitemesh:head />

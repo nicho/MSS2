@@ -5,6 +5,8 @@
  *******************************************************************************/
 package com.gamewin.weixin.web.account;
 
+import javax.servlet.http.HttpServletRequest;
+
 import org.apache.shiro.SecurityUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -16,7 +18,7 @@ import com.gamewin.weixin.entity.User;
 import com.gamewin.weixin.service.account.AccountService;
 import com.gamewin.weixin.service.account.OrgService;
 import com.gamewin.weixin.service.account.ShiroDbRealm.ShiroUser;
-import com.gamewin.weixin.util.ReadProperties;
+import com.gamewin.weixin.web.util.SessionUtil;
  
 @Controller
 @RequestMapping(value = "/index")
@@ -26,11 +28,11 @@ public class IndexController {
 	@Autowired
 	private OrgService orgService;
 	@RequestMapping(value = "/my",method = RequestMethod.GET)
-	public String myindex(Model model) {
+	public String myindex(Model model,HttpServletRequest request) {
 		ShiroUser user = (ShiroUser) SecurityUtils.getSubject().getPrincipal();
 		User u=accountService.getUser(user.getId()); 
 		user.setIntegral(u.getIntegral());
-		  
+		SessionUtil.cleanNavigationSession(request);
 		return "account/myindex";
 	} 
 
